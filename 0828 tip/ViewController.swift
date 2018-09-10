@@ -1,14 +1,15 @@
 //
 //  ViewController.swift
-//  0828 tip
+//  0911 EXCHANGE
 //
-//  Created by 王奕功 on 2018/8/28.
-//  Copyright © 2018年 王奕功. All rights reserved.
+//  Created by Zorro on 2018/9/11.
+//  Copyright © 2018年 YI-KUNG WANG. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
+    //outlet拉好先
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var percentTextField: UITextField!
     @IBOutlet weak var handlingFeeField: UITextField!
@@ -19,7 +20,7 @@ class ViewController: UIViewController {
     }
    
     @IBAction func calculate(_ sender: Any) {
-        let priceText = priceTextField.text!//價格
+        let priceText = priceTextField.text!//總金額
         let percentText = percentTextField.text!//稅額
         let handlingFee = handlingFeeField.text!//討人厭的手續費
         let price = Double(priceText)
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
         let handling = Double(handlingFee)
         //預防耍笨...要記得輸入數字啊
         if priceTextField.text == "" || percentTextField.text == "" || handlingFeeField.text == ""{
-            tipsLabel.text="ಠ╭╮ಠ"
+            tipsLabel.text="囧"//忘記輸入任何一個欄位會得到一個囧
         }
         else{
             tipsLabel.text = String(Double(priceTextField.text!)! * Double(percentTextField.text!)! / 100)
